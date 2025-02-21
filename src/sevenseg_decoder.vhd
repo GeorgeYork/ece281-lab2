@@ -39,6 +39,22 @@ end sevenseg_decoder;
 architecture Behavioral of sevenseg_decoder is
 
 begin
-
-
+    --with i_Hex select
+    o_seg_n <= "1000000" when i_Hex = "0000" else  
+            "1111001" when i_Hex = "0001" else
+            "0100100" when i_Hex = "0010" else
+            "0100100" when i_Hex = "0011" else
+            "0011001" when i_Hex = "0100" else
+            "0010010" when i_Hex = "0101" else
+            "0000010" when i_Hex = "0110" else
+            "1111000" when i_Hex = "0111" else
+            "0000000" when i_Hex = "1000" else
+            "0011000" when i_Hex = "1001" else
+            "0001000" when i_Hex = "1010" else
+            "0000011" when i_Hex = "1011" else
+            "0100111" when i_Hex = "1100" else
+            "0100001" when i_Hex = "1101" else
+            "0000110" when i_Hex = "1110" else
+            "0001110" when i_Hex = "1111" else                  
+            "1111111";
 end Behavioral;
