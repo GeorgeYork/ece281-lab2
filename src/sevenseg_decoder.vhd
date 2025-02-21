@@ -33,7 +33,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity sevenseg_decoder is
     Port ( i_Hex : in STD_LOGIC_VECTOR (3 downto 0);
-           o_seg_n : out STD_LOGIC_VECTOR (6 downto 0));
+           o_seg_n : out STD_LOGIC_VECTOR (6 downto 0)
+           );
 end sevenseg_decoder;
 
 architecture Behavioral of sevenseg_decoder is
@@ -43,7 +44,7 @@ begin
     o_seg_n <= "1000000" when i_Hex = "0000" else  
             "1111001" when i_Hex = "0001" else
             "0100100" when i_Hex = "0010" else
-            "0100100" when i_Hex = "0011" else
+            "0110000" when i_Hex = "0011" else
             "0011001" when i_Hex = "0100" else
             "0010010" when i_Hex = "0101" else
             "0000010" when i_Hex = "0110" else
